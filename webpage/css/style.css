@@ -18,7 +18,7 @@ header {
     border-radius: 0px,0px,50px,50px;
     padding: 20px 30px;
     margin: auto;
-    
+    text-align: center;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     
     position:relative;
@@ -26,22 +26,41 @@ header {
     border-radius: 0px 0px 12px 12px;
     
 }
+header #logo {
+    float: left;
+    line-height: 72px;
+    margin: -10px 2px;
+}
+
+header a #logo:hover{
+    color: #272765;
+}
 nav {
     display: inline-block;
     text-align: center;
-    
+    margin-left: -200px;
 }
-nav ul li a {
+
+header nav ul li a {
     
-    padding: 2px 10px;
     font-size: 20px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 25px;
     color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+}
+header li {
+    
+    padding: 2px 70px;
+    font-size: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #272765;
+    font-family: 'Montserrat', sans-serif;
     
     
 }
-nav ul li a:hover {
+header nav ul li:hover {
 	
     text-decoration: wavy overline lime
     
@@ -50,25 +69,18 @@ nav ul li {
     display: inline-block;
     margin: 10px;
     
+    
 }
 nav ul {
     list-style: none;
     
 }
 
-
-
-#logo {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 30px;
-    margin-right: 75px;
-    color: #FFF;
-}
 #logo img {
     width: 50px;
     vertical-align: middle;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 #subheader{
@@ -79,13 +91,83 @@ nav ul {
     font-family: 'Montserrat', sans-serif;
     
     
+    
 }
-
+#subheader nav{
+    margin-left: 10px;
+}
 #subheader li{
     padding: 0px 50px;
     
 }
 
 #subheader nav ul li a{
+    text-decoration: none;
     color: #403E3E;
+    font-size: 40;
+}
+
+#subheader nav ul li a:hover{
+    color: #272765;
+}
+
+#homecontent{
+    margin-top: 200px;
+}
+
+#homecontent h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    margin-left: 3%;
+    font-size: 58px;
+    color: #544CC9;
+}
+
+#homecontent h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-left: 34%;
+    font-size: 48px;
+    color: #272765;
+}
+#homecontent h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-left: 3%;
+    font-size: 19px;
+    margin-top: 4%;
+    padding-right: 54%;
+    text-align: justify;
+    letter-spacing: 0px;
+    
+}
+
+.btn{
+    box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.12);
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 30px;
+    font-weight: 200;
+    color: #544CC9;
+    border-radius: 12px;
+    border-color: #544CC9;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    padding: 8px 50px;
+}
+
+.btn:hover{
+    color: white;
+    
+    background-color: #544CC9;
+}
+#img{
+    
+    float: right;
+    margin-top: -5%;
+}
+
 }
