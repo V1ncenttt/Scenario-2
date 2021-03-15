@@ -17,5 +17,9 @@ def whoAreWe():
 def contact():
     return render_template("contact.html")
 
+@app.route("/rien")
+def rien():
+    return "This part has not yet been implemented"
+
 if __name__ == '__main__':
     app.run()
