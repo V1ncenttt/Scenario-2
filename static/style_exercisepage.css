@@ -127,72 +127,54 @@ nav ul {
     font-weight: 300;
     margin-left: 3%;
     font-size: 19px;
-    margin-top: 4%;
+    
     padding-right: 54%;
     text-align: justify;
     letter-spacing: 0px;
     
 }
 
+.sideImage {
+    width: 40%;
+    height: auto;
+    float: right;
+    text-align: right;
+    /* margin-top: 0%; */
+}
 
-.middlecontent{
-    margin: auto;
-    float: center;
-    margin-left: 15%;
-    margin-right: 15%;
+/* Resize images */
+.sideImage img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.answerinput{
     margin-top: 5%;
-    
-}
-
-.styled-table {
+    margin-left: 22%;
+    margin-right: 58%;
     border-radius: 10px;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 19px;
-    font-family: 'Montserrat', sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-left: 10%;
-    margin-right: 10%;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-
-.styled-table thead tr {
+.answerinput h1{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #BEBEC2;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 3%;
+}
+.answerinput .inp{
     
-    background-color: #544CC9;;
-    color: #ffffff;
-    text-align: left;
-    font-weight:800;
+    border:none;
+    border-bottom:thin solid ;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+.answerinput .inp:focus{
+    border:none;
+    outline: none;
+    border-bottom:thin solid #544CC9;
 }
 
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #544CC9;;
-}
-
-
-.styled-table tbody td:nth-child(2) {
-   padding-right: 105px;
-   margin-left: 105px;
-}
-.styled-table tbody td:nth-child(1) {
-    padding-right: 105px;
-    
- }
-
-.styled-table tbody tr.active-row {
-    font-weight: 00;
-    color: #544CC9;;
-}
 
