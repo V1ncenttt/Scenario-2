@@ -139,6 +139,7 @@ nav ul {
     height: auto;
     float: right;
     text-align: right;
+    margin-right: 5%;
     /* margin-top: 0%; */
 }
 
@@ -149,14 +150,43 @@ nav ul {
     
 }
 
-.answerinput{
-    margin-top: 5%;
-    margin-left: 18%;
-    margin-right: 58%;
+/* title input */
+.titleinput{
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 74%;
     border-radius: 10px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-.answerinput h1{
+.titleinput .titleinp{
+    
+    border:none;
+    outline:none;
+    border-bottom:thin solid ;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+.titleinput .titleinp:focus{
+    border:none;
+    outline: none;
+    border-bottom:thin solid #544CC9;
+}
+::placeholder{
+    color: black;
+    opacity: 1;
+    
+}
+
+/* regex input */
+.regexinput{
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 74%;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.regexinput h1{
     padding-top: 3%;
     padding-bottom: 3%;
     background-color: #BEBEC2;
@@ -165,7 +195,7 @@ nav ul {
     border-radius: 10px 10px 0px 0px;
     padding-left: 3%;
 }
-.answerinput .inp{
+.regexinput .inp{
     
     border:none;
     border-bottom:thin solid ;
@@ -173,7 +203,7 @@ nav ul {
     margin-top: 3%;
     margin-left: 3%;
 }
-.answerinput .inp:focus{
+.regexinput .inp:focus{
     border:none;
     outline: none;
     border-bottom:thin solid #544CC9;
@@ -183,11 +213,46 @@ input{
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Graph input */
+.dotgraphinput{
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 74%;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.dotgraphinput h1{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #BEBEC2;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 3%;
+}
 
+
+textarea{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    font-family: 'Montserrat', sans-serif;
+    width:92%;
+    border:none;
+    border-bottom:thin solid ;
+    resize: vertical;
+}
+.dotgraphinput textarea:focus{
+    border:none;
+    outline: none;
+    border-bottom:thin solid #544CC9;
+}
+
+/* Submit button */
 .btn{
     box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.12);
-    margin-left: 30%;
-    margin-top: 10%;
+    margin-left: 15%;
+    margin-top: 3%;
     
     border-radius: 12px;
     border-color: #544CC9;
@@ -215,3 +280,5 @@ input{
 .btn a:hover{
     border-color: aqua;
 }
+
+
