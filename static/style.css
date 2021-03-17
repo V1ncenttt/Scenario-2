@@ -34,10 +34,9 @@ header #logo {
     background:none;
 }
 
-nav {
-    display: inline-block;
-    text-align: center;
-    margin-left: -75px;
+header nav {
+    margin-right: 50px;
+    float:center;
 }
 
 header nav ul li a {
@@ -93,7 +92,7 @@ nav ul {
     
 }
 #subheader nav{
-    margin-left: 10px;
+    float:center;
 }
 #subheader li{
     padding: 0px 50px;
