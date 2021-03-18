@@ -2,7 +2,6 @@ from flask import Flask, request
 from flask.helpers import flash
 from flask.templating import render_template
 from operations import *
-import time
 
 
 app = Flask(__name__)
@@ -27,8 +26,11 @@ def exercies():
 def about():
     return render_template("about.html")
 
-@app.route("/create")
+@app.route("/create", methods = ['POST', 'GET'])
 def create():
+    if request.method == "POST":
+        data = request.form
+        print(data)
     return render_template("create.html")
 
 @app.route("/generator", methods = ['POST', 'GET'])
@@ -36,10 +38,12 @@ def generator():
     if request.method == "POST":
         data = request.form
         if (len(data["regex"]) > 0):
-            nfa = regToNFA(data["regex"])
-            writeDot(nfa)
-            return render_template("generator.html", label = "Here is the output NFA", image = "static/Images/graph.png")
-    
+            try :
+                nfa = regToNFA(data["regex"])
+                writeDot(nfa)
+                return render_template("generator.html", label = "Here is the output NFA", image = "static/Images/graph.png")
+            except:
+                return render_template("generator.html", label="Regex entered was not valid")
     return render_template("generator.html")
 
 
