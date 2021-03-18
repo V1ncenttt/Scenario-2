@@ -60,6 +60,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for item in data %}
+                    <tr class="active-row" onclick="window.location='exercise-{{item.id}}';">
+                        <td>{{item.type}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.difficulty}}</td>
+                        <td>{{item.date}}</td>
+                    </tr>
+                    {% endfor %}
                     <tr class="active-row">
                         <td>NFA -> REGEX</td>
                         <td>Easy exercise for REGEX conversion.</td>

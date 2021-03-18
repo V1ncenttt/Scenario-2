@@ -20,7 +20,7 @@ def contact():
 
 @app.route("/exercises")
 def exercies():
-    return render_template("exercises.html")
+    return render_template("exercises.html", data = [{"id":"1", "type": "test", "title":"exercise", "description":"Try to find a regular expression for this NFA", "difficulty":"40", "date":"2021-03-16"}])
 
 @app.route("/about")
 def about():
@@ -43,16 +43,17 @@ def generator():
                 writeDot(nfa)
                 return render_template("generator.html", label = "Here is the output NFA", image = "static/Images/graph.png")
             except:
-                return render_template("generator.html", label="Regex entered was not valid")
+                return render_template("generator.html", label = "Regex entered was not valid")
     return render_template("generator.html")
 
 
-
-
-@app.route("/exercise-<exNum>")
+@app.route("/exercise-<exNum>", methods = ['POST', 'GET'])
 def exercise(exNum):
-    print(exNum)
-    return render_template("index.html")
+    if request.method == "GET":
+        return render_template("exercise_template.html",data = {"id":"1", "type": "test", "title":"exercise", "description":"Try to find a regular expression for this NFA", "difficulty":"40", "date":"2021-03-16"})
+    if request.method == "POST":
+        print(request.form)
+        return render_template("sample_exercise_page.html")
 
 @app.route("/rien")
 def rien():
