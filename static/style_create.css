@@ -249,10 +249,11 @@ textarea{
 }
 
 /* Submit button */
-.btn{
+.btn_sub{
     box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.12);
     margin-left: 15%;
     margin-top: 3%;
+    width: 11%;
     
     border-radius: 12px;
     border-color: #544CC9;
@@ -265,19 +266,19 @@ textarea{
     padding: 6px 70px;
 }
 
-.btn :hover{
+.btn_sub :hover{
     border-color: aqua;
     border-radius: 12px;
 }
 
-.btn a{
+.btn_sub a{
     text-decoration: none;
     font-size: 24px;
     font-weight: 200;
     color: #544CC9;
 }
 
-.btn a:hover{
+.btn_sub a:hover{
     border-color: aqua;
 }
 
