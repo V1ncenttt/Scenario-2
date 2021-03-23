@@ -10,7 +10,7 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,600&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="static/style_create.css">
+	<link rel="stylesheet" href="../static/style_create.css">
 	<link rel="icon" href="static/Images/logo.png">
 
 </head>
@@ -52,9 +52,13 @@
 	<div class="titleinput">
 		<input type="text" class="titleinp" name="Title" placeholder="Title">
 	</div>
+	<h2>Difficulty + {percentage}?</h2>
+	<div class="sliderdifficultyinput">
+		<input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10">
+	</div>
     <div class="dotgraphinput">
-        <h1>Graph generation code(.dot)</h1>
-        <textarea name="dotinp" cols="40" rows="5"></textarea>
+        <h1>Graph generation code (.dot)</h1>
+        <textarea rows="3" name="dotinp" cols="40" rows="5"></textarea>
     </div>
     <div class="regexinput">
         <h1>REGEX:</h1>

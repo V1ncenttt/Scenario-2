@@ -178,6 +178,56 @@ nav ul {
     
 }
 
+/* Slider */
+h2{
+    margin-left: 3%;
+    margin-top: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+  
+ 
+.slider {
+    -webkit-appearance: none;  
+    appearance: none;
+    margin-left: 3%;
+    width: 23%; 
+    height: 5px; 
+    background: #d3d3d3; 
+    border-radius: 3px;
+    outline: none;
+    opacity: 0.7; 
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+.slider:hover {
+    opacity: 1;
+}
+
+
+.slider::-webkit-slider-thumb {
+    border:none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background: #544CC9; 
+    cursor: pointer; 
+}
+
+.slider::-moz-range-thumb {
+    border:none;
+    width: 15px; 
+    height: 15px;
+    background: #544CC9; 
+    border-radius: 15px;
+    cursor: pointer; 
+}
+
 /* regex input */
 .regexinput{
     margin-top: 3%;
@@ -215,7 +265,7 @@ input{
 
 /* Graph input */
 .dotgraphinput{
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 3%;
     margin-right: 74%;
     border-radius: 10px;
@@ -241,6 +291,7 @@ textarea{
     border:none;
     border-bottom:thin solid ;
     resize: vertical;
+    height: 10%;
 }
 .dotgraphinput textarea:focus{
     border:none;
@@ -281,5 +332,6 @@ textarea{
 .btn_sub a:hover{
     border-color: aqua;
 }
+
 
 
