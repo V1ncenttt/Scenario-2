@@ -20,7 +20,7 @@ def minimise(dfa):
     # return Automata.getDotFile(x)
     return x
 
-def writeDot(fsa):
+def writeDot(fsa, path = "static/Images/graph.png"):
     graphs = pydot.graph_from_dot_data(Automata.getDotFile(fsa))
     graph = graphs[0]
-    graph.write_png("static/Images/graph.png")
+    graph.write_png(path)

@@ -16,30 +16,38 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-        return render_template("index.html")
+    return render_template("index.html")
+
 
 @app.route("/who_are_we")
 def whoAreWe():
     return render_template("who_are_we.html")
 
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
 
 @app.route("/exercises")
 def exercies():
     return render_template("exercises.html", data = getAll())
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 @app.route("/create", methods = ['POST', 'GET'])
 def create():
     if request.method == "POST":
         data = request.form
-        print(data)
+        nfa = regToNFA(data["regex"])
+        writeDot(nfa, "static/Images/exercises/graph-" + getCurrentExNum(0) + ".png")
+        writeToDB(data)
     return render_template("create.html")
+
 
 @app.route("/generator", methods = ['POST', 'GET'])
 def generator():
@@ -57,20 +65,25 @@ def generator():
 
 @app.route("/exercise-<int:exNum>", methods = ['POST', 'GET'])
 def exercise(exNum):
+    data = getEx(exNum)
     if request.method == "GET":    
-        print(type(exNum))
-        return render_template("exercise_template.html",data = getEx(exNum))
+        return render_template("exercise_template.html",data = data)
     if request.method == "POST":
-        print(request.form)
-        return render_template("sample_exercise_page.html")
+        answer = request.form["answer"]
+        if answer == data["regex"]:
+            return "true"
+        return "false"
 
-@app.route("/rien")
-def rien():
-    return "This part has not yet been implemented"
 
 @app.errorhandler(404)
 def pageNotFound(e):
-    return "This page does not exist"
+    return render_template("error.html", code=404, error=e)
+
+
+@app.errorhandler(500)
+def serverError(e):
+    return render_template("error.html", code=500, error=e)
+
 
 @app.after_request
 def add_header(response):
@@ -80,16 +93,12 @@ def add_header(response):
     return response
 
 
-
-
-
-
 def getAll():     
     c.execute("SELECT * from Exercises")
     rows = c.fetchall()
     data = []
     for row in rows:
-        data.append({"id":row[0], "type": row[1], "title":row[2], "description":row[3], "difficulty":row[4], "date":row[5].strftime("%Y-%m-%e")})
+        data.append(rowToDictionary(row))
     return data
 
 
@@ -97,13 +106,26 @@ def getEx(exNum):
     c.execute("SELECT * from Exercises WHERE id=" + str(exNum))
     rows = c.fetchall()
     row = rows[0]
-    data = {"id":row[0], "type": row[1], "title":row[2], "description":row[3], "difficulty":row[4], "date":row[5].strftime("%Y-%m-%e")}
+    data = rowToDictionary(row)
     return data
 
 
+def rowToDictionary(row):
+    return {"id":row[0], "type": row[1], "title":row[2], "description":row[3], "difficulty":row[4], "date":row[5].strftime("%Y-%m-%e"), "regex":row[6], "image":"static/Images/exercises/" + row[7] + ".png"}
 
 
+def writeToDB(data):
+    command = "INSERT INTO Exercises (type, title, difficulty, description, regex, PNGPath) values('NFA -> REGEX', '" + data["title"] + "', " + data["difficulty"] + ", '" + data["description"] + "', '" + data["regex"] + "', 'graph-" + getCurrentExNum(1) + "')"
+    print(command)
+    c.execute(command)
+    conn.commit()
 
+def getCurrentExNum(increment):
+    with open("current.txt",'r+') as f:
+        x = int(f.readline())
+        f.seek(0)
+        f.write(str(x+increment))
+        return str(x)
 
 
 if __name__ == '__main__':
