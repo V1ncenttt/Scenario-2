@@ -216,3 +216,35 @@ nav ul {
     padding-bottom: 2%;
     
 }
+
+.btn{
+    box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.12);
+    margin-left: 35%;
+    margin-top: 2%;
+    
+    border-radius: 12px;
+    border-color: #544CC9;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-width: 1px;
+    
+    padding: 8px 50px;
+}
+
+.btn :hover{
+    border-color: aqua;
+    border-radius: 12px;
+}
+
+.btn a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 200;
+    color: #544CC9;
+}
+
+.btn a:hover{
+    border-color: aqua;
+}

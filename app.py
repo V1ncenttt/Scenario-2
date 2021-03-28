@@ -1,4 +1,5 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
+from flask.helpers import flash
 from flask.templating import render_template
 from operations import *
 import login_data
@@ -71,9 +72,16 @@ def exercise(exNum):
     if request.method == "POST":
         answer = request.form["answer"]
         if answer == data["regex"]:
-            return "true"
-        return "false"
+            return redirect("/correct")
+        return redirect("/false-" + str(exNum))
 
+@app.route("/correct")
+def correct():
+    return render_template("correct.html")
+
+@app.route("/false-<int:exnum>")
+def false(exnum):
+    return render_template("false.html", exnum = exnum)
 
 @app.errorhandler(404)
 def pageNotFound(e):
