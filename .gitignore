@@ -1,2 +1,3 @@
 login_data.py
 __pycache__
+*.pyc
