@@ -141,6 +141,9 @@ nav ul {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -152,8 +155,7 @@ nav ul {
     font-family: 'Montserrat', sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-left: 10%;
-    margin-right: 10%;
+
 }
 
 .styled-table thead tr {
