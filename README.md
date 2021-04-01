@@ -9,7 +9,7 @@
 
 ### How to run
  - Easiest way is to go to v2.fsa-exercises.live
- - Or issue set FLASK_APP=app.py and python -m flask run (need for the SQL logins)
+ - Or issue *set FLASK_APP=app.py* and *python -m flask run* (need for the SQL logins)
  - All of the needed libraries are included in the requirements text file
 
 ### References
