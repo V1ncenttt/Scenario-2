@@ -168,7 +168,10 @@ nav ul {
 }
 .card img{
     float: left;
+    object-fit: cover;
     width: 60px;
+    height: 60px;
+
     margin-left: 13px;
     margin-top: -9px;
     border-radius: 20px;
