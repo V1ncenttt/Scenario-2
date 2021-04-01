@@ -11,5 +11,5 @@
  - Easiest way is to go to v2.fsa-exercises.live
 
 ### References
- [1] Lin Onetwo, "automata-tools" library for Python, 2020
+ [1] Lin Onetwo, *"automata-tools"* library for Python, 2020
 
