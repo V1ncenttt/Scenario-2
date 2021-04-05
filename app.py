@@ -10,7 +10,7 @@ conn = pymysql.connect(host=login_data.HOST,
                         user=login_data.USER,
                         password=login_data.PASSWORD,
                         database=login_data.DATABASE)
-c = conn.cursor()
+# c = conn.cursor()
 
 
 app = Flask(__name__)
@@ -101,20 +101,24 @@ def add_header(response):
     return response
 
 
-def getAll():     
+def getAll():
+    c = conn.cursor()  
     c.execute("SELECT * from Exercises")
     rows = c.fetchall()
     data = []
+    c.close()
     for row in rows:
         data.append(rowToDictionary(row))
     return data
 
 
 def getEx(exNum):
+    c = conn.cursor()
     c.execute("SELECT * from Exercises WHERE id=" + str(exNum))
     rows = c.fetchall()
     row = rows[0]
     data = rowToDictionary(row)
+    c.close()
     return data
 
 
@@ -123,10 +127,12 @@ def rowToDictionary(row):
 
 
 def writeToDB(data):
+    c = conn.cursor()
     command = "INSERT INTO Exercises (type, title, difficulty, description, regex, PNGPath) values('NFA -> REGEX', '" + data["title"] + "', " + data["difficulty"] + ", '" + data["description"] + "', '" + data["regex"] + "', 'graph-" + getCurrentExNum(1) + "')"
     print(command)
     c.execute(command)
     conn.commit()
+    c.close()
 
 def getCurrentExNum(increment):
     with open("current.txt",'r+') as f:
